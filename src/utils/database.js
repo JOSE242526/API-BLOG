@@ -9,3 +9,5 @@ const db = new Sequelize({
     port: config.db.port,
     database: config.db.name
 })
+
+module.exports = db

@@ -32,7 +32,7 @@ const Users = db.define('users', {
     },
     role: {
         type: DataTypes.STRING,
-        defaultvalue: 'normal'
+        defaultValue: 'normal'
     },
     country: {
         type: DataTypes.STRING(3)

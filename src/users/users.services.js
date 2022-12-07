@@ -90,11 +90,24 @@ const getMyuser = (req, res) => {
         })
 }
 
+const pacthMyUser = (req, res) => {
+    const id = req.user.id
+    const { first_name, last_name, country, age, user_name } = req.body
+    userControllers.updateUser(id, {first_name, last_name, country, age, user_name})
+    .then(() =>{
+        res.status(200).json({message: 'Your user was modified succesfully'})
+    })
+    .catch((err) => {
+        res.status(400).json({message: err.message});
+    })
+}
+
 module.exports = {
     getAllUsers,
     getUserById, 
     postUser,
     patchUser,
     deleteUser,
-    getMyuser
+    getMyuser,
+    pacthMyUser
 }
